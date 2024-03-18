@@ -1,0 +1,22 @@
+name: MyDataset
+root: /path/to/dataset
+
+type:
+
+data_transform:
+  - name: read
+    arguments:
+      tensor_type:
+
+  - name: to_tensor
+    arguments:
+      tensor_type: torch.DoubleTensor # можем переработать в функцию, к-ая возращает tensor.dtype с названием типа
+
+target_transform:
+  - name: categorical_to_tensor
+    arguments:
+      dictionary: # словарик
+
+  - name: to_tensor
+    arguments:
+      tensor_type: torch.LongTensor # можем переработать в функцию, к-ая возращает tensor.dtype с названием типа
